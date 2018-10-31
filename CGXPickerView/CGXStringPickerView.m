@@ -213,6 +213,9 @@
         self.dataSource = dataSource;
         self.isAutoSelect = isAutoSelect;
         self.resultBlock = resultBlock;
+        if (manager) {
+            self.manager = manager;
+        }
         
         if (defaultSelValue) {
             if ([defaultSelValue isKindOfClass:[NSString class]]) {
