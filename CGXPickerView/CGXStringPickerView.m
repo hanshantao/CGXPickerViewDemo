@@ -216,7 +216,6 @@
         if (manager) {
             self.manager = manager;
         }
-        
         if (defaultSelValue) {
             if ([defaultSelValue isKindOfClass:[NSString class]]) {
                 self.selectedItem = defaultSelValue;
@@ -451,6 +450,7 @@
             }
         }
     }
+    [pickerView reloadComponent:component];
 }
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
     //设置分割线的颜色
@@ -469,11 +469,22 @@
         pickerLabel.adjustsFontSizeToFitWidth = YES;
         pickerLabel.textAlignment = NSTextAlignmentCenter;
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
-        [pickerLabel setFont:[UIFont systemFontOfSize:self.manager.pickerTitleSize]];
+        pickerLabel.font = self.manager.pickerTitleFont;
         [pickerLabel setTextColor:self.manager.pickerTitleColor];
     }
-    pickerLabel.text=[self pickerView:pickerView titleForRow:row forComponent:component];//调用上一个委托方法，获得要展示的title
+    
+    NSString *title = [self pickerView:pickerView titleForRow:row forComponent:component];
+    if ([title isEqualToString:self.selectedItems[component]] || [title isEqualToString:self.selectedItem?:@""]) {
+        pickerLabel.textColor = self.manager.pickerSelectTitleColor;
+    }else{
+        pickerLabel.textColor = self.manager.pickerTitleColor;
+    }
+    pickerLabel.text=title;//调用上一个委托方法，获得要展示的title
     return pickerLabel;
+}
+
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return self.manager.pickerRowHeight;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

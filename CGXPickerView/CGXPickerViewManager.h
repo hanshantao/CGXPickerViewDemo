@@ -18,18 +18,25 @@
 @property (nonatomic , assign) CGFloat kTopViewH;
 
 @property (nonatomic , strong) UIColor *pickerTitleColor;//字体颜色  默认黑色
+@property (nonatomic , strong) UIColor *pickerSelectTitleColor;//选中的颜色
 @property (nonatomic , assign) CGFloat pickerTitleSize;//字体大小  默认15
+@property (nonatomic , assign) CGFloat pickerRowHeight;
+@property (nonatomic , strong) UIFont *pickerTitleFont;
+
+
 
 
 @property (nonatomic , strong) UIColor *lineViewColor;//分割线颜色
 @property (nonatomic , strong) UIColor *titleLabelColor;//中间标题颜色
 @property (nonatomic , strong) UIColor *titleLabelBGColor;//中间标题背景颜色
 @property (nonatomic , assign) CGFloat titleSize;//字体大小
+@property (nonatomic , strong) UIFont *titleFont;
 
 
 @property (nonatomic , strong) UIColor *rightBtnTitleColor;//右侧标题颜色
 @property (nonatomic , strong) UIColor *rightBtnBGColor;//右侧标题背景颜色
 @property (nonatomic , assign) CGFloat rightBtnTitleSize;//字体大小
+@property (nonatomic , strong) UIFont *rightBtnFont;
 @property (nonatomic , strong) NSString *rightBtnTitle;//右侧文字
 @property (nonatomic , assign) CGFloat rightBtnCornerRadius;//右侧圆角
 @property (nonatomic , assign) CGFloat rightBtnBorderWidth;//右侧边框宽
@@ -39,6 +46,7 @@
 @property (nonatomic , strong) UIColor *leftBtnTitleColor;//右侧标题颜色
 @property (nonatomic , strong) UIColor *leftBtnBGColor;//右侧标题背景颜色
 @property (nonatomic , assign) CGFloat leftBtnTitleSize;//字体大小
+@property (nonatomic , strong) UIFont *leftBtnFont;
 @property (nonatomic , strong) NSString *leftBtnTitle;//右侧文字
 @property (nonatomic , assign) CGFloat leftBtnCornerRadius;//右侧圆角
 @property (nonatomic , assign) CGFloat leftBtnBorderWidth;//右侧边框宽

@@ -81,7 +81,7 @@
         _leftBtn.layer.borderColor = self.manager.leftBtnborderColor.CGColor;
         _leftBtn.layer.borderWidth = self.manager.leftBtnBorderWidth;
         _leftBtn.layer.masksToBounds = YES;
-        _leftBtn.titleLabel.font = [UIFont systemFontOfSize:self.manager.leftBtnTitleSize];
+        _leftBtn.titleLabel.font = self.manager.leftBtnFont;
         [_leftBtn setTitleColor:self.manager.leftBtnTitleColor forState:UIControlStateNormal];
         [_leftBtn setTitle:self.manager.leftBtnTitle forState:UIControlStateNormal];
         [_leftBtn addTarget:self action:@selector(clickLeftBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -99,7 +99,7 @@
         _rightBtn.layer.masksToBounds = YES;
         _rightBtn.layer.borderWidth = self.manager.rightBtnBorderWidth;
         _rightBtn.layer.borderColor = self.manager.rightBtnborderColor.CGColor;
-        _rightBtn.titleLabel.font = [UIFont systemFontOfSize:self.manager.rightBtnTitleSize];
+        _rightBtn.titleLabel.font = self.manager.rightBtnFont;
         [_rightBtn setTitleColor:self.manager.rightBtnTitleColor forState:UIControlStateNormal];
         [_rightBtn setTitle:self.manager.rightBtnTitle forState:UIControlStateNormal];
         [_rightBtn addTarget:self action:@selector(clickRightBtn) forControlEvents:UIControlEventTouchUpInside];
@@ -112,7 +112,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(65, 0, SCREEN_WIDTH - 130, self.manager.kTopViewH)];
         _titleLabel.backgroundColor = self.manager.titleLabelBGColor;
-        _titleLabel.font = [UIFont systemFontOfSize:self.manager.titleSize];
+        _titleLabel.font = self.manager.titleFont;
         _titleLabel.textColor = self.manager.titleLabelColor;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }
